@@ -120,6 +120,7 @@ public class ArbolN_ario {
                 if(arbolSinDatos(arbol)){
                     System.out.println("\nIngrese el dato a encontrarle sus hermanos");
                     dato = Leer.next().charAt(0);
+                    
                     x= arbol.buscarDato(arbol.getRaiz(), dato);
                     if(x==null){
                         System.out.println("\nEl dato ingresado no existe en el arbol \n");
@@ -127,9 +128,10 @@ public class ArbolN_ario {
                         if(x==arbol.getRaiz()){
                             System.out.println("\nEl dato no tiene hermanos porque es la raiz \n");
                         }else{
+                            nodo padre=arbol.mostrarPadreDato(arbol.getRaiz(), dato, arbol.getRaiz());
                             int nivel= arbol.mostrarNivelDatoE(arbol.getRaiz(), dato, 0);
                             System.out.println("\nLos hermanos del dato "+dato+" son: \n");
-                            arbol.mostrarHermanosDatoE(arbol.getRaiz(), nivel, 0, dato); System.out.println("\n");
+                            arbol.mostrarHermanosDatoE(padre, nivel, arbol.mostrarNivelDatoE(arbol.getRaiz(), padre.getDato(), 0), dato); System.out.println("\n");
                         }
                     }
                 }break;
@@ -156,7 +158,11 @@ public class ArbolN_ario {
                     if(x==null){
                         System.out.println("\nEl dato ingresado no existe en el arbol \n");
                     }else{
-                        arbol.mostrarPadreDato(arbol.getRaiz(), dato, arbol.getRaiz().getDato());
+                        if(arbol.mostrarPadreDato(arbol.getRaiz(), dato, arbol.getRaiz())==null){
+                            System.out.println("\nEl dato ingresado no tiene ningun padre \n");
+                        }else{
+                            System.out.println("\nEl padre del dato "+dato+ " es "+arbol.mostrarPadreDato(arbol.getRaiz(), dato, arbol.getRaiz()).getDato()+"\n");
+                        }
                     }
                 }break;
             case 15:

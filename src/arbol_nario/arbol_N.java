@@ -60,7 +60,6 @@ public class arbol_N {
             } 
         } return i;
     }
-    
     public void eliminar (nodo r, nodo k, char dato){
         nodo p=r; nodo q=k;
         while(p!=null){
@@ -95,7 +94,7 @@ public class arbol_N {
                     }else{
                         if(p.getDato()==dato&&p!=r){
                             if(q==r&&p.getLiga()==null){
-                                k.setDato(p.getDato()); k.setSw(false); k.setLigaLista(null);
+                                k.setDato(q.getDato()); k.setSw(false); k.setLigaLista(null);
                             }else{
                                 if(p.getLiga()==null){
                                     q.setLiga(null);
@@ -277,25 +276,29 @@ public class arbol_N {
             return mayalt;
         } return altura;
     }
-    public void mostrarPadreDato(nodo r, char dato, char padreact){
-        nodo p=r; char padre=padreact;
+    public nodo mostrarPadreDato(nodo r, char dato, nodo padreact){
+        nodo p=r; nodo padre=padreact;
         while(p!=null){
             if(!p.isSw()){
                 if(p==raiz&&p.getDato()==dato){
-                    System.out.println("\nEl dato no tiene padres \n");
+                    return null;
                 }else{
                     if(p==r&&p.getDato()!=dato){
-                        padre=p.getDato();
+                        padre=p;
                     }else{
                         if(p.getDato()==dato){
-                            System.out.println("\nEl padre de "+dato+" es "+padre+"\n"); break;
+                            return padre; 
                         }
                     }
                 }
             }else{
-                mostrarPadreDato(p.getLigaLista(), dato, padre);
+                nodo x= mostrarPadreDato(p.getLigaLista(), dato, padre);
+                if(x!=null){
+                    padre=x; return padre;
+                }
             }p=p.getLiga();
         }
+        return null;
     }
     public void mostrarDatosNivel(nodo r, int nv, int nvact){
         nodo p=r; int nivel=nvact;
