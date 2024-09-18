@@ -22,6 +22,19 @@ public class ArbolN_ario {
         arbol.insertar(arbol.getRaiz(), 'w', 'a');
         arbol.insertar(arbol.getRaiz(), 'w', 'b');
         arbol.insertar(arbol.getRaiz(), 'g', 'z');
+        /*arbol.eliminar (arbol.getRaiz(), arbol.getRaiz(), 'z');
+        arbol.eliminar (arbol.getRaiz(), arbol.getRaiz(), 'x');
+        arbol.eliminar (arbol.getRaiz(), arbol.getRaiz(), 's');
+        arbol.eliminar (arbol.getRaiz(), arbol.getRaiz(), 'h');
+        arbol.eliminar (arbol.getRaiz(), arbol.getRaiz(), 'f');
+        arbol.eliminar (arbol.getRaiz(), arbol.getRaiz(), 'w');
+        arbol.eliminar (arbol.getRaiz(), arbol.getRaiz(), 'c');
+        arbol.eliminar (arbol.getRaiz(), arbol.getRaiz(), 'e');
+        arbol.eliminar (arbol.getRaiz(), arbol.getRaiz(), 'm');
+        arbol.eliminar (arbol.getRaiz(), arbol.getRaiz(), 'b');
+        arbol.eliminar (arbol.getRaiz(), arbol.getRaiz(), 'a');
+        arbol.eliminar (arbol.getRaiz(), arbol.getRaiz(), 'g');
+        arbol.mostrar(arbol.getRaiz());*/
         
        while (opmenu!=17){
            menu();

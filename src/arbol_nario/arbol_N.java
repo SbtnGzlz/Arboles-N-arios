@@ -66,7 +66,7 @@ public class arbol_N {
             if(!p.isSw()){
                 if(raiz.getDato()==dato&&p==raiz){
                     if(p.getLiga()==null){
-                        p=null;
+                        raiz=null;
                     }else{
                         if(p.getLiga()!=null&&p.getLiga().isSw()){
                             p.setDato(p.getLiga().getLigaLista().getDato());
@@ -84,10 +84,10 @@ public class arbol_N {
                             eliminar(p.getLiga().getLigaLista(), p.getLiga(), p.getLiga().getLigaLista().getDato());
                         }else{
                             if(p.getLiga().getLiga()==null){
-                                q.setDato(p.getLiga().getDato()); q.setLigaLista(null); q.setSw(false);
+                                k.setDato(p.getLiga().getDato()); k.setLigaLista(null); k.setSw(false);
                             }else{
                                 if(p.getLiga().getLiga()!=null){
-                                    q.setLigaLista(p.getLiga());
+                                    k.setLigaLista(p.getLiga());
                                 }
                             }
                         }
@@ -99,7 +99,7 @@ public class arbol_N {
                                 if(p.getLiga()==null){
                                     q.setLiga(null);
                                 }else{
-                                    if(p.getLiga()!=null||p.getLiga().isSw()){
+                                    if(p.getLiga()!=null){
                                         q.setLiga(p.getLiga());
                                     }
                                 }
